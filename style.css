@@ -1,0 +1,229 @@
+*,
+*::before,
+*::after {
+    margin: border-box;
+}
+
+:root {
+    --desaturated-red: hsl(0, 36%, 70%); /* PRIMARY*/
+    --soft-red: hsl(0, 93%, 68%);
+    --dark-grayish-red: hsl(0, 6%, 24%); /* NEUTRAL */
+}
+
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    overflow-x: hidden;
+}
+
+.main-container {
+    width: 374px;
+    height: 90vh;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.logo-img {
+    width: 100px;
+    float: left;
+    margin-bottom: 30px;
+    margin-left: 35px;
+}
+
+.hero-mbl {
+    width: 100%;
+    margin: 0 auto;
+    /*margin-left: -30px;*/
+    
+}
+.hero {
+   margin: 0 auto;
+}
+
+/* TEXT */
+.title {
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.6rem;
+    font-size: 40px;
+    color: var(--desaturated-red);
+
+    margin-top: 65px;
+    margin-bottom: 18px;
+}
+.bold {
+    font-weight: 400;
+    color: black;
+}
+.text {
+    color: var(--desaturated-red);
+    font-size: 14px;
+    line-height: 1.4rem;
+
+    margin: 0px 35px 30px 35px;
+}
+
+/* FORM & BUTTON */
+input {
+    width: 260px;
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--desaturated-red);
+    margin: 0 0px 0 5px;
+    outline: none;
+    background-color: hsl(0, 100%, 98%);
+}
+#email::placeholder {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--desaturated-red);
+}
+
+button {
+    position: relative;
+    right: 17%;
+    left: 35%;
+    bottom: 48px;
+    padding: 12px 25px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border: none;
+    outline: none;
+}
+
+button:hover {
+    cursor: pointer;
+    background: hsl(0, 80%, 86%);
+}
+
+/* ERROR MESSAGE */
+.error {
+    position: absolute;
+    left: 35vw;
+    color: var(--soft-red);
+    margin: 10px 100px 20px 0px;
+    display: block;
+    font-size: 12px;
+  }
+
+.error-icon {
+    border: 2px solid var(--soft-red);
+    background-image: url(./images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-position: top 50% right 80px;
+}
+
+
+/* FOOTER */
+.attribution { font-size: 10px; text-align: center; }
+.attribution a { color: hsl(0, 74%, 74%); }
+
+/* IMAGE FOR DESKTOP DESIGN */
+.hero-desktop {
+    display: none;
+}
+
+
+
+/* -------------DESKTOP---------------- */
+
+@media (min-width: 950px) {
+/* IMAGES FROM PHONE DESIGN TO DESKTOP DESIGN */
+.hero {
+    display: none;
+}
+
+.hero-desktop {
+    display: initial;
+}
+
+.hero-desk {
+    grid-column: 3;
+    margin-top: -13px;
+    margin-left: 0px;
+}
+
+/* CONTAINERS GRID LAYOUT */
+body {
+    background-image: url(./images/bg-pattern-desktop.svg);
+}
+
+.main-container {
+    width: 100.20vw;
+    height: 90vh;
+    margin: 0;
+    text-align: left;
+
+    display: grid;
+    grid-template-columns: 11vw 46.13vw 42.24vw;
+}
+
+/* LEFT PART WITH LOGO, TEXTS & FORM */
+.text-container {
+    grid-column: 2;
+}
+
+.logo-img {
+    width: 150px;
+    margin-top: 55px;
+    margin-left: 0px;
+}
+
+.title {
+    margin: 225px 100px 25px 0px;
+    font-size: 65px;
+    line-height: 4.2rem;
+}
+
+.text {
+    margin: 0px 15.3vw 39px 0px;
+    width: 450px;
+    font-size: 16px;
+    line-height: 1.7rem;
+}
+
+/* FORM & BUTTON */
+form {
+    width: 443px;
+    margin-right: auto;
+}
+
+input {
+    height: 25px;
+    width: 27.83vw;
+    margin-left: 0px;
+    background-color: hsl(0, 0%, 98%);
+}
+
+button {
+    position: absolute;
+    left: 35.5%;
+    bottom:19.8%;
+    padding: 18px 45px;
+    border-radius: 30px;
+}
+
+/* FOOTER */
+.attribution {
+    margin: 50px 0px 0px 170px;
+    text-align: left;
+}
+
+/* ERROR MESSAGE FROM JAVASCRIPT */
+.error {
+    position: unset;
+    color: var(--soft-red);
+    margin: 10px auto 20px 20px;
+    display: block;
+    font-size: 14px;
+  }
+
+.error-icon {
+    border: 2px solid var(--soft-red);
+    background-image: url(./images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-position: top 50% right 110px;
+}
+}
