@@ -1,6 +1,8 @@
 *,
 *::before,
 *::after {
+    margin: 0;
+    padding: 0;
     margin: border-box;
 }
 
@@ -13,37 +15,32 @@
 
 body {
     font-family: 'Josefin Sans', sans-serif;
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+
+.main-container { 
     width: 100%;
     height: auto;
-    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-    overflow-x: hidden;
 }
-
-.main-container {
-    width: 374px;
-    height: 90vh;
-    margin: 30px auto;
-    text-align: center;
-}
-
+.logo{ margin-left: 5%; }
 .logo-img {
-    width: 100px;
-    float: left;
-    margin-bottom: 30px;
-    margin-left: 35px;
-}
-
-.hero-mbl {
-    width: 100%;
-    margin: 0 auto;
-    /*margin-left: -30px;*/
-    
+    width: 30%;
+    padding: 5vh 0;
 }
 .hero {
-   margin: 0 auto;
+    width: 100%;
+    margin: 0 auto;
 }
 
 /* TEXT */
+.textcontent {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
 .title {
     text-transform: uppercase;
     font-weight: 300;
@@ -62,19 +59,21 @@ body {
     color: var(--desaturated-red);
     font-size: 14px;
     line-height: 1.4rem;
-
     margin: 0px 35px 30px 35px;
 }
 
 /* FORM & BUTTON */
+form {
+    display: flex;
+}
 input {
-    width: 260px;
+    width: 80%;
     padding: 15px 20px;
     border-radius: 50px;
     border: 1px solid var(--desaturated-red);
-    margin: 0 0px 0 5px;
     outline: none;
     background-color: hsl(0, 100%, 98%);
+    transform: translateX(10%);
 }
 #email::placeholder {
     font-family: 'Josefin Sans', sans-serif;
@@ -82,15 +81,12 @@ input {
 }
 
 button {
-    position: relative;
-    right: 17%;
-    left: 35%;
-    bottom: 48px;
     padding: 12px 25px;
     border-radius: 25px;
     background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
     border: none;
     outline: none;
+    transform: translateX(-20%);
 }
 
 button:hover {
@@ -103,7 +99,7 @@ button:hover {
     position: absolute;
     left: 35vw;
     color: var(--soft-red);
-    margin: 10px 100px 20px 0px;
+    margin: 60px 100px 20px 0px;
     display: block;
     font-size: 12px;
   }
@@ -112,12 +108,16 @@ button:hover {
     border: 2px solid var(--soft-red);
     background-image: url(./images/icon-error.svg);
     background-repeat: no-repeat;
-    background-position: top 50% right 80px;
+    background-position: top 50% right 50px;
 }
 
 
 /* FOOTER */
-.attribution { font-size: 10px; text-align: center; }
+.attribution { 
+    font-size: 10px; 
+    text-align: center; 
+    margin-top: 10vh;
+}
 .attribution a { color: hsl(0, 74%, 74%); }
 
 /* IMAGE FOR DESKTOP DESIGN */
@@ -131,63 +131,60 @@ button:hover {
 
 @media (min-width: 950px) {
 /* IMAGES FROM PHONE DESIGN TO DESKTOP DESIGN */
-.hero {
-    display: none;
-}
-
-.hero-desktop {
-    display: initial;
-}
-
-.hero-desk {
-    grid-column: 3;
-    margin-top: -13px;
-    margin-left: 0px;
-}
 
 /* CONTAINERS GRID LAYOUT */
 body {
+    height: 100vh;
     background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .main-container {
-    width: 100.20vw;
-    height: 90vh;
-    margin: 0;
-    text-align: left;
+    width: 100%;
+    height: auto;
 
     display: grid;
-    grid-template-columns: 11vw 46.13vw 42.24vw;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 180px auto;
 }
-
-/* LEFT PART WITH LOGO, TEXTS & FORM */
-.text-container {
+.textcontent {
+    width: 100%;
+    margin: 0 auto;
+    grid-column: 1;
+}
+.hero-mbl, .hero { display: none; }
+.hero-desktop { 
+    display: block;
+    width: 610px;
     grid-column: 2;
 }
 
+/* LEFT PART WITH LOGO, TEXTS & FORM */
 .logo-img {
     width: 150px;
-    margin-top: 55px;
-    margin-left: 0px;
+    margin-left: 7vw;
 }
 
 .title {
-    margin: 225px 100px 25px 0px;
+    margin: 10vh 0 25px 10vw;
     font-size: 65px;
     line-height: 4.2rem;
+    text-align: left;
 }
 
 .text {
-    margin: 0px 15.3vw 39px 0px;
-    width: 450px;
+    margin: 0px 12vw 40px 10vw;
     font-size: 16px;
     line-height: 1.7rem;
+    text-align: left;
 }
 
 /* FORM & BUTTON */
 form {
     width: 443px;
-    margin-right: auto;
+    margin-left: 8vw;
+
 }
 
 input {
@@ -198,32 +195,28 @@ input {
 }
 
 button {
-    position: absolute;
-    left: 35.5%;
-    bottom:19.8%;
     padding: 18px 45px;
     border-radius: 30px;
 }
 
-/* FOOTER */
-.attribution {
-    margin: 50px 0px 0px 170px;
-    text-align: left;
-}
 
 /* ERROR MESSAGE FROM JAVASCRIPT */
 .error {
-    position: unset;
-    color: var(--soft-red);
-    margin: 10px auto 20px 20px;
-    display: block;
-    font-size: 14px;
+    position: absolute;
+    left: 0;
+    margin: 80px 0 20px 15vw;
   }
 
 .error-icon {
-    border: 2px solid var(--soft-red);
-    background-image: url(./images/icon-error.svg);
-    background-repeat: no-repeat;
-    background-position: top 50% right 110px;
+    background-position: top 50% right 80px;
+}
+
+/* FOOTER */
+.attribution { 
+    text-align: left;
+    margin-top: 0;
+    position: absolute;
+    bottom: 0%;
+    left: 25vw;
 }
 }
